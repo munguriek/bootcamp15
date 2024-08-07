@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'hello_world',
     
     # Local Apps 
     'blog.apps.BlogConfig',
@@ -70,7 +71,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'config.wsgi.application'
+WSGI_APPLICATION = 'blog.wsgi.application'
 
 
 # Database
@@ -79,7 +80,12 @@ WSGI_APPLICATION = 'config.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': env('AKRAM_MPAGI'),
+        'USER': env('AKRAM_MPAGI_USER'),
+        'PASSWORD': env('AKRAM_MPAGI_I_LOVE_GOD'),
+        'HOST': env('LOCAL_HOST'),
+        'PORT': env('5432'),
+        
     }
 }
 
